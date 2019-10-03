@@ -18,14 +18,12 @@
 <meta property="og:image" content="https://s2.ax1x.com/2019/10/03/u0HDKJ.jpg">
 <meta property="og:image" content="https://s2.ax1x.com/2019/10/03/u0bLwR.jpg">
 <meta property="og:image" content="https://s2.ax1x.com/2019/10/03/u0qaX4.jpg">
-<meta property="og:image" content="https://s2.ax1x.com/2019/10/03/u0TYss.jpg">
-<meta property="og:image" content="https://s2.ax1x.com/2019/10/03/u0qB7R.jpg">
 <meta property="og:image" content="https://s2.ax1x.com/2019/10/03/u0qT4P.jpg">
 <meta property="og:image" content="https://s2.ax1x.com/2019/10/03/u0qLjg.jpg">
 <meta property="og:image" content="https://s2.ax1x.com/2019/10/03/u0LFvF.jpg">
 <meta property="og:image" content="https://s2.ax1x.com/2019/10/03/u0LM8K.jpg">
 <meta property="og:image" content="https://s2.ax1x.com/2019/10/03/u0LeER.jpg">
-<meta property="og:updated_time" content="2019-10-03T14:11:08.775Z">
+<meta property="og:updated_time" content="2019-10-03T14:19:10.639Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HEXO搭建个人博客部署GitHub完整版">
 <meta name="twitter:description" content="前言都已经9102年了，博主听信了某位技术大佬的指引心血来潮想搭建一个属于自己的个人blog。本以为大佬们技术过硬只需无脑跟就能一步登天，万万没想到所要面对的是一片刀山火海，道路崎岖不说还巨坑不断，刚从一个坑里爬出来就又是另一个大坑，一路走来经历了砸键盘，摔键盘，啃键盘，拔键帽等一系列无能狂怒（心疼键盘1秒）。但是，博主是一个不畏艰辛，智勇双全，阳光帅气的21世纪好青年，翻山越岭成功搭建起了个人博">
@@ -196,61 +194,39 @@
 [Git](https://git-scm.com/)  
 Node.js内附带一个npm包管理器，我们需要借助npm包管理器来安装Hexo  
 安装完成后使用win+R组合键输入cmd打开命令行窗口  
-输入node -v来查看版本号，输入npm -v查看版本号  
-<img src="https://s2.ax1x.com/2019/10/03/u0bLwR.jpg" alt="版本号">  
-正确显示版本号后输入下面代码进行安装Hexo  
-`npm install -g hexo-cli`  
-等待一段时间进行安装，安装完成后输入hexo -v进行验证  
+输入node -v来查看版本号，输入npm -v查看版本号    
+
+<img src="https://s2.ax1x.com/2019/10/03/u0bLwR.jpg" alt="版本号"> 
+
+
+<p>正确显示版本号后输入下面代码进行安装Hexo<br><code>npm install -g hexo-cli</code><br>等待一段时间进行安装，安装完成后输入hexo -v进行验证    </p>
 <img src="https://s2.ax1x.com/2019/10/03/u0qaX4.jpg" alt="hexo -v">  
-hexo就安装完毕了  
-## Blog搭建
-同样打开命令行，在根目录下输入  
-`hexo init "blog"`  
-引号内为文件夹名字，这里我起名为blog，**引号一定要有**  
-接下来请注意<span style="color:red"><b>**第一个大坑要来了</b></span>  
-**这里在某些时候会莫名的卡住，请耐心等待，但等待时间过长（长于5分钟）请关闭命令行窗口，打开我的电脑-->进入c盘-->users-->本机名-->找到blog文件夹整个删除，重新再来.**  
-之后如果出现某些问题无法解决时重复上步骤强行续命。  
-clone完成后执行下面代码  
-`hexo n "test"`  
-建立真正的blog文档（当然这篇文章的标题就是test）  
-打开blog文件夹-->找到source-->_posts  
-如果能找到一个名字为test.md文件则证明搭建成功了。  
-回到命令行，执行  
-`cd blog`   
-`hexo g`  
-`hexo s`  
-这时会出现  
-<img src="https://s2.ax1x.com/2019/10/03/u0TYss.jpg" alt="4000端口">  
-根据此条提示打开你的浏览器，输入http://localhost:4000便能进入到自己的blog中，浏览完毕退回到命令行按ctrl+C组合键断开连接。
-## Markdown文档
-<span style="color:red">***前方高能，请仔细阅读完再进行操作***</span>  
-没错.md文件为Markdown文本，想编写Markdown文本自然也需要工具，博主之前电脑中有NodePad++这款软件，也可以编写markdown文本但必须下载插件才能支持预览。**可是**，万恶的插件管理器居然不好用，无法下载安装插件不说，连从网上自行下载的插件也识别不了，果断放弃。  
-这里推荐使用主流的Markdown编辑器[MarkdownPad2](http://markdownpad.com/)。  
-!!!!!!!但是如果你选择了博主推荐的编辑器，并且你是Windows10的系统，<span style="color:red"><b>第二个大坑来了</b></span>  
-这里你会发现同样无法实现预览功能，哈哈哈，被套路了吧。  
-这时根据官方推荐你需要额外安装一个东东[Awesomium 1.6.6 SDK](http://markdownpad.com/download/awesomium_v1.6.6_sdk_win.exe).  
-<img src="https://s2.ax1x.com/2019/10/03/u0qB7R.jpg" alt="会心一笑" width="300" height="300">  
-## 部署到GitHub
-当然部署到GitHub必须要有一个GitHub账号，还没有的请自行注册，这里不再演示如何注册  
-来到GitHub主页点击右上角的加号菜单中的new repository新建仓库  
+
+<p>hexo就安装完毕了  </p>
+<h2 id="Blog搭建"><a href="#Blog搭建" class="headerlink" title="Blog搭建"></a>Blog搭建</h2><p>同样打开命令行，在根目录下输入<br><code>hexo init &quot;blog&quot;</code><br>引号内为文件夹名字，这里我起名为blog，<strong>引号一定要有</strong><br>接下来请注意<span style="color:red"><b><strong>第一个大坑要来了</strong></b></span><br>**这里在某些时候会莫名的卡住，请耐心等待，但等待时间过长（长于5分钟）请关闭命令行窗口，打开我的电脑–&gt;进入c盘–&gt;users–&gt;本机名–&gt;找到blog文件夹整个删除，重新再来.<br>之后如果出现某些问题无法解决时重复上步骤强行续命。<br>clone完成后执行下面代码<br><code>hexo n &quot;test&quot;</code><br>建立真正的blog文档（当然这篇文章的标题就是test）<br>打开blog文件夹–&gt;找到source–&gt;_posts<br>如果能找到一个名字为test.md文件则证明搭建成功了。<br>回到命令行，执行<br><code>cd blog</code><br><code>hexo g</code><br><code>hexo s</code><br>这时会出现    </p>
+<p>&lt;img src = “<a href="https://s2.ax1x.com/2019/10/03/u0TYss.jpg&quot;alt" target="_blank" rel="noopener">https://s2.ax1x.com/2019/10/03/u0TYss.jpg&quot;alt</a> = “4000端口”&gt;    </p>
+<p>根据此条提示打开你的浏览器，输入<a href="http://localhost:4000便能进入到自己的blog中，浏览完毕退回到命令行按ctrl+C组合键断开连接。" target="_blank" rel="noopener">http://localhost:4000便能进入到自己的blog中，浏览完毕退回到命令行按ctrl+C组合键断开连接。</a></p>
+<h2 id="Markdown文档"><a href="#Markdown文档" class="headerlink" title="Markdown文档"></a>Markdown文档</h2><p><span style="color:red"><strong><em>前方高能，请仔细阅读完再进行操作</em></strong></span><br>没错.md文件为Markdown文本，想编写Markdown文本自然也需要工具，博主之前电脑中有NodePad++这款软件，也可以编写markdown文本但必须下载插件才能支持预览。<strong>可是</strong>，万恶的插件管理器居然不好用，无法下载安装插件不说，连从网上自行下载的插件也识别不了，果断放弃。<br>这里推荐使用主流的Markdown编辑器<a href="http://markdownpad.com/" target="_blank" rel="noopener">MarkdownPad2</a>。<br>!!!!!!!但是如果你选择了博主推荐的编辑器，并且你是Windows10的系统，<span style="color:red"><b>第二个大坑来了</b></span><br>这里你会发现同样无法实现预览功能，哈哈哈，被套路了吧。<br>这时根据官方推荐你需要额外安装一个东东<a href="http://markdownpad.com/download/awesomium_v1.6.6_sdk_win.exe" target="_blank" rel="noopener">Awesomium 1.6.6 SDK</a>.    </p>
+<p>&lt;img src = “<a href="https://s2.ax1x.com/2019/10/03/u0qB7R.jpg&quot;" target="_blank" rel="noopener">https://s2.ax1x.com/2019/10/03/u0qB7R.jpg&quot;</a> alt = “会心一笑”width = “300”height = “300”&gt;    </p>
+<h2 id="部署到GitHub"><a href="#部署到GitHub" class="headerlink" title="部署到GitHub"></a>部署到GitHub</h2><p>当然部署到GitHub必须要有一个GitHub账号，还没有的请自行注册，这里不再演示如何注册<br>来到GitHub主页点击右上角的加号菜单中的new repository新建仓库    </p>
 <img src="https://s2.ax1x.com/2019/10/03/u0qT4P.jpg" alt="new repository">  
+
 <img src="https://s2.ax1x.com/2019/10/03/u0qLjg.jpg" alt="repository name">  
-**注意**：这里的仓库名一定是你自己的***昵称名.github.io*** 。其他的命名方式会出现错误，之后别人对你的blog进行访问时就是通过这个来访问的。  
-博主之前已经注册过该仓库名，这里图片演示时会发出警告。  
-创建成功后会给出一条地址。  
+
+<p><strong>注意</strong>：这里的仓库名一定是你自己的<strong><em>昵称名.github.io</em></strong> 。其他的命名方式会出现错误，之后别人对你的blog进行访问时就是通过这个来访问的。<br>博主之前已经注册过该仓库名，这里图片演示时会发出警告。<br>创建成功后会给出一条地址。  </p>
 <img src="https://s2.ax1x.com/2019/10/03/u0LFvF.jpg" alt="地址">    
-将浏览器最小化回到命令行。  
-在blog根目录下执行以下命令安装git插件。  
-`npm install hexo-deployer-git --save`  
-等待插件安装完成后打开**我的电脑**中的blog文件夹。  
-根目录中有一个_config.yml文件，博主是用notepad++打开的，当然也可以用visual studio，vim等软件打开。  
-滚轮拉倒最下方有一栏deployment  
-在type冒号后添加git，再在下一行添加一行repo：后面接github网页给出的那条地址。  
+
+<p>将浏览器最小化回到命令行。<br>在blog根目录下执行以下命令安装git插件。<br><code>npm install hexo-deployer-git --save</code><br>等待插件安装完成后打开<strong>我的电脑</strong>中的blog文件夹。<br>根目录中有一个_config.yml文件，博主是用notepad++打开的，当然也可以用visual studio，vim等软件打开。<br>滚轮拉倒最下方有一栏deployment<br>在type冒号后添加git，再在下一行添加一行repo：后面接github网页给出的那条地址。  </p>
 <div style="color:red"><b>第三大坑警告</b></div>
-**在type，repo，branch冒号后一定要先写一个空格再写相应的内容**  
+**在type，repo，branch冒号后一定要先写一个空格再写相应的内容**    
+
 <img src="https://s2.ax1x.com/2019/10/03/u0LM8K.jpg" alt="deployment">  
 
-<p>回到命令行，执行<code>hexo d</code>命令，开始向远端推。如果命令行提示你输入github账号密码，那么证明你成功完成这博客的部署。<br><strong>你以为这就完了？？？</strong><br>当然并不是所有小伙伴这部分都能成功，如果接下来你的命令行向你发出了一排警告，警告后面跟了一句话<br>。。。Please tell me who you are和一项错误<br>那么ok你中奖了<span style="color:red"><b>第四大坑</b></span><br>这时你需要打开你电脑中的blog文件夹–&gt;.deploy_git–&gt;.git–&gt;用notepad++打开config文件添加一栏【user】如下图，email为github注册邮箱name为昵称。<br><img src="https://s2.ax1x.com/2019/10/03/u0LeER.jpg" alt="gitconfig"><br>回到命令行重新执行<code>hexo d</code>输入github账号密码，部署成功。</p>
+
+<p>回到命令行，执行<code>hexo d</code>命令，开始向远端推。如果命令行提示你输入github账号密码，那么证明你成功完成这博客的部署。<br><strong>你以为这就完了？？？</strong><br>当然并不是所有小伙伴这部分都能成功，如果接下来你的命令行向你发出了一排警告，警告后面跟了一句话<br>。。。Please tell me who you are和一项错误<br>那么ok你中奖了<span style="color:red"><b>第四大坑</b></span><br>这时你需要打开你电脑中的blog文件夹–&gt;.deploy_git–&gt;.git–&gt;用notepad++打开config文件添加一栏【user】如下图，email为github注册邮箱name为昵称。  </p>
+<img src="https://s2.ax1x.com/2019/10/03/u0LeER.jpg" alt="gitconfig">  
+
+<p>回到命令行重新执行<code>hexo d</code>输入github账号密码，部署成功。</p>
 <h2 id="blog文档创作"><a href="#blog文档创作" class="headerlink" title="blog文档创作"></a>blog文档创作</h2><p>当你还沉浸在成功部署github的喜悦中时，安奈不住内心的冲动立即新建了一篇新的blog，指尖在键盘上飞速的打上文字，并添加上美丽的图片。一切看起来是那么的和谐，一切是那么的美妙。执行<code>hexo d</code>时同样也是成功的，<strong>但是</strong>当你检查你网页上的blog时一定是这个表情  </p>
 <p>&lt;img src = “<a href="https://s2.ax1x.com/2019/10/03/u0LHaR.jpg&quot;" target="_blank" rel="noopener">https://s2.ax1x.com/2019/10/03/u0LHaR.jpg&quot;</a> alt = “大长脸”width = “250”height = “230”&gt;  </p>
 <p><strong>MMP</strong>哦，我图片呢？？？？<br>没错最让我痛心棘手的大坑来了<span style="color:red"><b>最后一座坑</b></span><br>博主翻遍了所有网上大神的解决方案，通过本地上传图片的解决方案每一个好用。内心一万头草泥马奔腾而过，所以最终只有通过本地图片上传云t图床获取云端图片URL的方法了，但这无形中为博客的制作带来了很大的工作量。<br>在浏览器上搜索图床，使用什么图床自行选择，在markdown图片编辑的地方插入图片的URL即可显示图片。  </p>
